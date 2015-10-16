@@ -40,7 +40,7 @@ int main() {
     // This gives us a window on the screen
     xcb_map_window(connection, window);
     xcb_flush(connection);
-   
+
     // setup listening for events
     xcb_generic_event_t *event;
     // Loop for events
