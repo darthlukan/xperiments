@@ -1,4 +1,4 @@
-all: connect hello hello_ext
+all: connect hello hello_ext events
 
 connect:
 	gcc -Wall connect.c -lxcb -o connect
@@ -9,5 +9,8 @@ hello:
 hello_ext:
 	gcc -Wall hello_ext.c -lxcb -o hello_ext
 
+events:
+	gcc -Wall events.c -lxcb -o events
+
 clean:
-	rm connect hello hello_ext
+	rm connect hello hello_ext events
