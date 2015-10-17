@@ -37,7 +37,7 @@ int main() {
     // xcb_poll_for_event does not block, so this will only catch the EXPOSE event then die out.
     // If we used xcb_wait_for_event, we'd block, thus continuing the loop and would actually
     // have a window to receive a possible XCB_BUTTON_PRESS.
-    while ((event = xcb_poll_for_event(conn))) {
+    while ((event = xcb_wait_for_event(conn))) {
         switch (event->response_type & ~0x80) {
             case XCB_EXPOSE:
                 printf("Expose event\n");
